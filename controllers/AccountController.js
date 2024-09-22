@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { imageDeleter } from "../helpers/cloudinary/imageDeleter.js";
+import { imageDeleter } from "../helpers/cloudinary/ImageDeleter.js";
 import { imageUploader } from "../helpers/cloudinary/ImageUploader.js";
 import { generateRandomPassword } from "../utils/generators/PasswordGenerator.js";
 import { nodemailerClient } from "../clients/NodeMailerClient.js";
