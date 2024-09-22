@@ -1,5 +1,5 @@
 import { extractCloudinaryIDForCertificates } from '../helpers/cloudinary/ExtractId.js';
-import { imageDeleter } from '../helpers/cloudinary/imageDeleter.js';
+import { imageDeleter } from '../helpers/cloudinary/ImageDeleter.js';
 import { imageUploader } from '../helpers/cloudinary/ImageUploader.js';
 import CertificateModel from '../models/CertificateModel.js';
 import { v4 as uuidv4 } from 'uuid';
