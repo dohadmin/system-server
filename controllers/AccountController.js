@@ -10,6 +10,7 @@ import TraineeModel from "../models/TraineeModel.js";
 import TrainingModel from "../models/TrainingModel.js";
 import CredentialModel from "../models/CredentialModel.js";
 import RequestModel from "../models/RequestModel.js";
+import AuditTrailModel from "../models/AuditTrailModel.js"
 import AdminModel from "../models/AdminModel.js";
 import bcrypt from 'bcrypt';
 
@@ -997,6 +998,7 @@ export const deleteUser = async (req, res) => {
         const imageId = extractCloudinaryID(trainer.avatar);
         await imageDeleter("avatars", imageId);
       }
+      await AuditTrailModel.deleteMany({userId: trainer._id })
       await TrainerModel.findOneAndDelete({ credentialId: id });
       await CredentialModel.findByIdAndDelete(id);
       await TrainingModel.deleteMany({ trainerId: trainer._id });
